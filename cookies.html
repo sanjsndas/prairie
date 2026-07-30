@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookies · Prairie Biscuit Bloom</title>
+  <!-- Font: premium serif + sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f0;
+      color: #2a241c;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+
+    .site-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #fcf9f4;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.02);
+    }
+
+    :root {
+      --bloom-green: #5f7a5a;
+      --bloom-gold: #b9925c;
+      --bloom-cream: #f3eee6;
+      --bloom-ink: #1f1b16;
+      --bloom-sand: #e3d9cd;
+      --bloom-prairie: #dacbb8;
+      --bloom-white: #fefcf8;
+    }
+
+    h1, h2, h3, h4, .logo, .nav-primary a, .card-title, .footer-head {
+      font-family: 'Martel', serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--bloom-ink);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .logo span {
+      background: var(--bloom-gold);
+      color: white;
+      font-size: 1rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0 0.8rem;
+      border-bottom: 2px solid var(--bloom-sand);
+      flex-wrap: wrap;
+    }
+
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-primary a {
+      text-decoration: none;
+      color: var(--bloom-ink);
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+
+    .nav-primary a:hover {
+      border-bottom-color: var(--bloom-gold);
+      color: #000;
+    }
+
+    .story-arch {
+      display: flex;
+      flex-direction: column;
+      margin: 3rem 0 2rem;
+    }
+
+    .story-arch h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--bloom-ink);
+    }
+
+    .story-arch .subhead {
+      font-size: 1.2rem;
+      color: #4b4136;
+      max-width: 580px;
+      margin-top: 0.8rem;
+      border-left: 6px solid var(--bloom-gold);
+      padding-left: 1.6rem;
+      font-weight: 300;
+    }
+
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+      margin: 2.5rem 0 3rem;
+    }
+
+    .floating-card {
+      background: var(--bloom-white);
+      border-radius: 2.5rem 1rem 2.5rem 1rem;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .card-feature {
+      background: var(--bloom-white);
+      padding: 2rem 2.5rem;
+      border-radius: 4rem 1.2rem 4rem 1.2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #ece5db;
+      transition: 0.2s;
+    }
+
+    .meta-tag {
+      background: var(--bloom-prairie);
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #2d2a22;
+      text-transform: uppercase;
+    }
+
+    .pill-btn {
+      background: var(--bloom-ink);
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      border: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      font-size: 0.85rem;
+      transition: 0.15s;
+      display: inline-block;
+      text-decoration: none;
+      margin-top: 0.8rem;
+    }
+
+    .pill-btn:hover {
+      background: #3f372d;
+      transform: scale(0.97);
+    }
+
+    .privacy-content h2 {
+      font-size: 1.8rem;
+      margin: 1.8rem 0 0.4rem;
+      color: var(--bloom-ink);
+    }
+    .privacy-content h3 {
+      font-size: 1.3rem;
+      margin: 1.6rem 0 0.3rem;
+      font-weight: 600;
+    }
+    .privacy-content p {
+      margin: 0.6rem 0;
+      color: #2d251e;
+    }
+    .privacy-content ul {
+      margin: 0.6rem 0 0.6rem 1.8rem;
+    }
+    .privacy-content li {
+      margin: 0.3rem 0;
+    }
+
+    .side-note {
+      background: #f7f2e9;
+      border-radius: 3rem 0.5rem 3rem 0.5rem;
+      padding: 2rem 1.8rem;
+      border: 1px solid #dccfc0;
+    }
+
+    .side-note h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .side-note .highlight {
+      background: var(--bloom-white);
+      border-radius: 2rem;
+      padding: 0.6rem 1.2rem;
+      border-left: 6px solid var(--bloom-gold);
+      margin: 1rem 0;
+    }
+
+    .hr-divider {
+      border: 0;
+      border-top: 2px solid #e4d9cc;
+      margin: 2rem 0;
+    }
+
+    .footer-distinct {
+      margin-top: 4rem;
+      background: #f2ece2;
+      padding: 3rem 2rem 2.5rem;
+      border-radius: 5rem 1rem 1rem 1rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1fr;
+      gap: 2rem;
+      border: 1px solid #dccfc0;
+    }
+
+    .footer-distinct .brand span {
+      background: var(--bloom-gold);
+      color: white;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #2d251e;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px dotted transparent;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: var(--bloom-gold);
+    }
+
+    /* Cookie preference toggle */
+    .cookie-pref {
+      background: var(--bloom-white);
+      border-radius: 3rem;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid #d4c5b2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 0.8rem 0;
+    }
+
+    .toggle-group {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .toggle-btn {
+      background: #e4d9cc;
+      border: none;
+      border-radius: 30px;
+      padding: 0.3rem 1.2rem;
+      font-weight: 500;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .toggle-btn.active {
+      background: var(--bloom-gold);
+      color: white;
+    }
+
+    .toggle-btn:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 800px) {
+      .privacy-grid { grid-template-columns: 1fr; }
+      .footer-distinct { grid-template-columns: 1fr 1fr; }
+      .story-arch h1 { font-size: 2.8rem; }
+      .nav-primary { gap: 0.8rem; }
+    }
+    @media (max-width: 500px) {
+      .footer-distinct { grid-template-columns: 1fr; }
+      .nav-primary { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+
+  <!-- navigation: original horizontal + pill -->
+  <nav class="nav-bar">
+    <div class="logo">🌾 PRAIRIE <span>BISCUIT</span> BLOOM</div>
+    <ul class="nav-primary">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html" style="border-bottom-color: var(--bloom-gold);">Cookies Policy</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="disclamier.html">Disclaimer</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero: cookies header -->
+  <div class="story-arch">
+    <h1>Cookies ·<br>crumbs of clarity</h1>
+    <div class="subhead">We use only the lightest touch — no heavy tracking, no hidden agendas. Here's everything you need to know about our cookie usage.</div>
+  </div>
+
+  <!-- cookies grid: main policy + sidebar -->
+  <div class="privacy-grid">
+    <!-- main content -->
+    <div class="floating-card privacy-content" style="border-radius: 3rem 0.5rem 3rem 0.5rem; background:#fcf9f4;">
+      <span class="meta-tag">🍪 last updated: july 2026</span>
+      <h2>Our cookie philosophy</h2>
+      <p>Prairie Biscuit Bloom (“we”, “us”, “our”) believes in a simple, respectful web. We use cookies sparingly — only to make your visit functional and pleasant, never to profile or track you across the internet.</p>
+
+      <h2>1. What are cookies?</h2>
+      <p>Cookies are small text files placed on your device by websites you visit. They're widely used to make sites work more efficiently and to provide useful information to site owners. We use them minimally and transparently.</p>
+
+      <h2>2. The cookies we use</h2>
+      <p>We use only these essential and functional cookies:</p>
+      <ul>
+        <li><strong>Preference cookies:</strong> to remember your cookie consent choice (so we don't ask you every time).</li>
+        <li><strong>Session cookies:</strong> to keep you logged in (if you have an account) and to maintain a smooth reading experience.</li>
+        <li><strong>Performance cookies:</strong> lightweight, anonymized analytics to understand which articles are most read. No personal data is collected.</li>
+      </ul>
+      <p style="background: #f3eee6; padding: 0.5rem 1.5rem; border-radius: 2rem; display: inline-block; margin-top:0.3rem;"><strong>We do not use</strong> advertising cookies, tracking pixels, or third-party marketing cookies.</p>
+
+      <h2>3. Your cookie preferences</h2>
+      <p>You can manage your cookie preferences below. Your choice will be remembered for 12 months.</p>
+
+      <!-- interactive cookie preference toggle (visual only) -->
+      <div class="cookie-pref">
+        <span style="font-weight: 500;">🍪 Functional cookies</span>
+        <div class="toggle-group">
+          <button class="toggle-btn active">On</button>
+          <button class="toggle-btn">Off</button>
+        </div>
+      </div>
+      <div class="cookie-pref">
+        <span style="font-weight: 500;">📊 Anonymized analytics</span>
+        <div class="toggle-group">
+          <button class="toggle-btn active">On</button>
+          <button class="toggle-btn">Off</button>
+        </div>
+      </div>
+      <p style="font-size:0.9rem; color:#5a4f42; margin-top:0.2rem;">These toggles are for demonstration — in practice, you can manage cookies via your browser settings.</p>
+
+      <h2>4. How to manage cookies in your browser</h2>
+      <p>Most browsers allow you to control cookies through their settings. You can:</p>
+      <ul>
+        <li>Delete all cookies already stored on your device.</li>
+        <li>Block all cookies (though some sites may not function properly).</li>
+        <li>Set preferences for specific websites.</li>
+      </ul>
+      <p>For more information, visit the help pages of your browser (Chrome, Firefox, Safari, Edge).</p>
+
+      <h2>5. Third-party cookies</h2>
+      <p>We do not use third-party cookies. Any links to external resources (books, articles) are provided for reference and do not set cookies on our behalf.</p>
+
+      <h2>6. Updates to this policy</h2>
+      <p>We may update this cookie policy occasionally. The latest version will always be posted here, with the effective date noted.</p>
+      <p style="margin-top: 1.5rem; background: #f3eee6; padding: 0.8rem 1.8rem; border-radius: 4rem; display: inline-block;">🍪 Last reviewed: July 2026</p>
+    </div>
+
+    <!-- sidebar: quick summary -->
+    <div class="side-note">
+      <h3>🍪 Cookies at a glance</h3>
+      <div class="highlight">
+        <p><strong>Essential:</strong> 2–3 functional cookies.</p>
+        <p><strong>Analytics:</strong> lightweight, anonymized.</p>
+        <p><strong>Advertising:</strong> none — we don't track you.</p>
+      </div>
+      <h4 style="font-family:'Martel',serif; font-size:1.2rem; margin-top:1.5rem;">✉️ Questions?</h4>
+      <p style="font-size:0.95rem;">If you have any questions about our cookie usage, reach out:</p>
+      <p style="background: white; border-radius: 2rem; padding: 0.4rem 1.2rem; border:1px solid #d4c5b2;">privacy@prairiebiscuitbloom.com</p>
+      <hr style="margin: 1.5rem 0; border-color: #c8bbaa;">
+      <p style="font-size:0.85rem; color:#3d352b;"><span style="font-weight:600;">Our pledge:</span> we keep your browsing as quiet and calm as a prairie morning — no surveillance, no selling.</p>
+      <div style="margin-top: 1.5rem; background: var(--bloom-white); border-radius: 3rem; padding: 0.8rem 1.8rem; border: 1px solid #d4c5b2; display: inline-block;">
+        🕊️ read our <a href="privacy.html" style="color: var(--bloom-gold);">Privacy Policy</a> & <a href="terms.html" style="color: var(--bloom-gold);">Terms</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- additional info: cookie principles -->
+  <div style="background: #f3eee6; padding: 2rem 2.5rem; border-radius: 2rem 4rem 2rem 4rem; margin: 1rem 0 2rem;">
+    <h2 style="font-family:'Martel',serif; font-size:1.8rem; margin-bottom:0.5rem;">Our cookie principles</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-weight:600;">🔒 Minimal & essential</h4>
+        <p style="font-size:0.95rem;">We use only what's necessary for a functional, pleasant reading experience.</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-weight:600;">👁️ Transparent</h4>
+        <p style="font-size:0.95rem;">Every cookie is disclosed here. No hidden trackers, no surprises.</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-weight:600;">🙅 No advertising</h4>
+        <p style="font-size:0.95rem;">We don't sell your data or show targeted ads. Ever.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- decorative mini cards -->
+  <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin:2rem 0; justify-content:center;">
+    <div style="background:#dad0c0; width:180px; height:100px; border-radius:4rem 0.5rem 2rem 0.5rem; display:flex; align-items:center; justify-content:center; font-weight:300; color:#2f281f;">🍪 essential</div>
+    <div style="background:#c8bcab; width:180px; height:100px; border-radius:1rem 3rem 1rem 3rem; display:flex; align-items:center; justify-content:center; font-weight:300; color:#2f281f;">📊 analytics</div>
+    <div style="background:#b8aa96; width:180px; height:100px; border-radius:2rem 0.5rem 4rem 0.5rem; display:flex; align-items:center; justify-content:center; font-weight:300; color:#2f281f;">🚫 no ads</div>
+  </div>
+
+  <!-- footer distinct -->
+  <footer class="footer-distinct">
+    <div class="brand">
+      <div style="font-size:1.8rem; font-family:'Martel',serif;">🌾 PRAIRIE <span style="background:var(--bloom-gold); color:white; padding:0.1rem 0.6rem; border-radius:30px;">BISCUIT</span> BLOOM</div>
+      <p style="margin-top:0.6rem; color:#3f372e; font-size:0.9rem;">A journal of place, patience, and the prairie. Est. 2026.</p>
+    </div>
+    <div class="footer-links"><strong>Explore</strong><a href="#">Blog</a><a href="#">Categories</a><a href="#">Authors</a><a href="#">Archive</a></div>
+    <div class="footer-links"><strong>Information</strong><a href="#">About</a><a href="#">Contact</a><a href="#">Editorial policy</a><a href="privacy.html">Privacy</a><a href="#">Terms</a></div>
+    <div class="footer-links"><strong>Resources</strong><a href="#">FAQ</a><a href="#">Sitemap</a><a href="#">Disclaimer</a><a href="cookies.html">Cookie policy</a></div>
+  </footer>
+
+  <div style="display:flex; justify-content:space-between; padding:1.5rem 0.5rem; font-size:0.7rem; color:#6b6257; border-top:1px solid #ddd0c2; margin-top:0.5rem;">
+    <span>© 2026 Prairie Biscuit Bloom — all rights reserved</span>
+    <span>handcrafted · slow web</span>
+  </div>
+
+</div> <!-- end site-wrap -->
+</body>
+</html>

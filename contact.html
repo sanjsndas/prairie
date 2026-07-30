@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · Prairie Biscuit Bloom</title>
+  <!-- Font: premium serif + sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f0;
+      color: #2a241c;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+
+    .site-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #fcf9f4;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.02);
+    }
+
+    :root {
+      --bloom-green: #5f7a5a;
+      --bloom-gold: #b9925c;
+      --bloom-cream: #f3eee6;
+      --bloom-ink: #1f1b16;
+      --bloom-sand: #e3d9cd;
+      --bloom-prairie: #dacbb8;
+      --bloom-white: #fefcf8;
+    }
+
+    h1, h2, h3, h4, .logo, .nav-primary a, .card-title, .footer-head {
+      font-family: 'Martel', serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--bloom-ink);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .logo span {
+      background: var(--bloom-gold);
+      color: white;
+      font-size: 1rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0 0.8rem;
+      border-bottom: 2px solid var(--bloom-sand);
+      flex-wrap: wrap;
+    }
+
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-primary a {
+      text-decoration: none;
+      color: var(--bloom-ink);
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+
+    .nav-primary a:hover {
+      border-bottom-color: var(--bloom-gold);
+      color: #000;
+    }
+
+    .story-arch {
+      display: flex;
+      flex-direction: column;
+      margin: 3rem 0 2rem;
+    }
+
+    .story-arch h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--bloom-ink);
+    }
+
+    .story-arch .subhead {
+      font-size: 1.2rem;
+      color: #4b4136;
+      max-width: 580px;
+      margin-top: 0.8rem;
+      border-left: 6px solid var(--bloom-gold);
+      padding-left: 1.6rem;
+      font-weight: 300;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3rem;
+      margin: 2.5rem 0 4rem;
+    }
+
+    .floating-card {
+      background: var(--bloom-white);
+      border-radius: 2.5rem 1rem 2.5rem 1rem;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .card-feature {
+      background: var(--bloom-white);
+      padding: 2rem 2.5rem;
+      border-radius: 4rem 1.2rem 4rem 1.2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #ece5db;
+      transition: 0.2s;
+    }
+
+    .meta-tag {
+      background: var(--bloom-prairie);
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #2d2a22;
+      text-transform: uppercase;
+    }
+
+    .pill-btn {
+      background: var(--bloom-ink);
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      border: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      font-size: 0.85rem;
+      transition: 0.15s;
+      display: inline-block;
+      text-decoration: none;
+      margin-top: 0.8rem;
+    }
+
+    .pill-btn:hover {
+      background: #3f372d;
+      transform: scale(0.97);
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: 500;
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #2d251e;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-top: 0.3rem;
+      border: 1px solid #d6cbbc;
+      border-radius: 2rem;
+      background: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--bloom-gold);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(185, 146, 92, 0.2);
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-details {
+      background: #f7f2e9;
+      border-radius: 3rem 0.5rem 3rem 0.5rem;
+      padding: 2rem 2rem;
+      border: 1px solid #dccfc0;
+    }
+
+    .contact-details h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-details p {
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .contact-details .inline-icon {
+      font-size: 1.4rem;
+    }
+
+    .hr-divider {
+      border: 0;
+      border-top: 2px solid #e4d9cc;
+      margin: 2rem 0;
+    }
+
+    .footer-distinct {
+      margin-top: 4rem;
+      background: #f2ece2;
+      padding: 3rem 2rem 2.5rem;
+      border-radius: 5rem 1rem 1rem 1rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1fr;
+      gap: 2rem;
+      border: 1px solid #dccfc0;
+    }
+
+    .footer-distinct .brand span {
+      background: var(--bloom-gold);
+      color: white;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #2d251e;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px dotted transparent;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: var(--bloom-gold);
+    }
+
+    @media (max-width: 800px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-distinct { grid-template-columns: 1fr 1fr; }
+      .story-arch h1 { font-size: 2.8rem; }
+      .nav-primary { gap: 0.8rem; }
+    }
+    @media (max-width: 500px) {
+      .footer-distinct { grid-template-columns: 1fr; }
+      .nav-primary { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+
+  <!-- navigation: original horizontal + pill -->
+  <nav class="nav-bar">
+    <div class="logo">🌾 PRAIRIE <span>BISCUIT</span> BLOOM</div>
+    <ul class="nav-primary">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" style="border-bottom-color: var(--bloom-gold);">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="disclamier.html">Disclaimer</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero: contact page header -->
+  <div class="story-arch">
+    <h1>Reach out ·<br>we listen to the prairie</h1>
+    <div class="subhead">Letters, inquiries, and field notes. We reply to every message within two sunrises.</div>
+  </div>
+
+  <!-- contact grid: form + details -->
+  <div class="contact-grid">
+    <!-- left: contact form -->
+    <div class="floating-card" style="border-radius: 3rem 0.5rem 3rem 0.5rem; background:#fcf9f4;">
+      <span class="meta-tag">✉️ send a note</span>
+      <h2 class="card-title" style="font-size:2rem; margin-top:0.3rem;">Write to us</h2>
+      <p style="color:#3f372e; margin: 0.5rem 0 1rem;">We welcome story pitches, questions about the prairie, or simply a hello.</p>
+      
+      <form class="contact-form" action="#" method="POST">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Ruth Bader" required>
+
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="ruth@prairie.com" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Inquiry about..." >
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+
+        <button type="submit" class="pill-btn" style="margin-top: 1.8rem; background: var(--bloom-gold); border: none; width: auto; padding: 0.8rem 2.8rem;">Send letter →</button>
+      </form>
+    </div>
+
+    <!-- right: contact details / info -->
+    <div class="contact-details">
+      <h3>📍 Prairie post</h3>
+      <p><span class="inline-icon">📮</span> P.O. Box 74, Great Plains, ND 58072</p>
+      <p><span class="inline-icon">📞</span> +1 (701) 555‑0246</p>
+      <p><span class="inline-icon">✉️</span> hello@prairiebiscuitbloom.com</p>
+      <hr style="margin: 1.5rem 0; border-color: #c8bbaa;">
+      <h4 style="font-family:'Martel',serif; font-size:1.3rem;">Hours of attention</h4>
+      <p style="font-size:0.95rem; margin-top:0.2rem;">Monday – Friday · 9am – 5pm CT<br>Weekends · closed for wandering</p>
+      <hr style="margin: 1.5rem 0; border-color: #c8bbaa;">
+      <p style="font-size:0.9rem; color:#3d352b;"><span style="font-weight:600;">Slow reply policy:</span> we value depth over speed. Please allow 48–72 hours for a thoughtful response.</p>
+      <div style="margin-top: 1.8rem; background: white; border-radius: 3rem; padding: 0.8rem 1.8rem; border: 1px solid #d4c5b2; display: inline-block;">
+        🕊️ We read every letter
+      </div>
+    </div>
+  </div>
+
+  <!-- additional info: FAQ or extra note (real value) -->
+  <div style="background: #f3eee6; padding: 2rem 2.5rem; border-radius: 2rem 4rem 2rem 4rem; margin: 1rem 0 2rem;">
+    <h2 style="font-family:'Martel',serif; font-size:1.8rem; margin-bottom:0.5rem;">Before you write</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-weight:600;">📖 Submissions</h4>
+        <p style="font-size:0.95rem;">We accept essays, poetry, and field notes. Please include a short bio and your connection to the prairie.</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-weight:600;">🔍 Research queries</h4>
+        <p style="font-size:0.95rem;">For academic or journalistic inquiries, we offer access to our archive and can connect you with local experts.</p>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <h4 style="font-weight:600;">🌾 Events & readings</h4>
+        <p style="font-size:0.95rem;">We host seasonal gatherings and online readings. Let us know if you'd like to be invited.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- minimal images (decorative) -->
+  <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin:2rem 0; justify-content:center;">
+    <div style="background:#dad0c0; width:180px; height:100px; border-radius:4rem 0.5rem 2rem 0.5rem; display:flex; align-items:center; justify-content:center; font-weight:300; color:#2f281f;">📬 mail</div>
+    <div style="background:#c8bcab; width:180px; height:100px; border-radius:1rem 3rem 1rem 3rem; display:flex; align-items:center; justify-content:center; font-weight:300; color:#2f281f;">🌾 prairie</div>
+    <div style="background:#b8aa96; width:180px; height:100px; border-radius:2rem 0.5rem 4rem 0.5rem; display:flex; align-items:center; justify-content:center; font-weight:300; color:#2f281f;">✉️ letter</div>
+  </div>
+
+  <!-- footer distinct -->
+  <footer class="footer-distinct">
+    <div class="brand">
+      <div style="font-size:1.8rem; font-family:'Martel',serif;">🌾 PRAIRIE <span style="background:var(--bloom-gold); color:white; padding:0.1rem 0.6rem; border-radius:30px;">BISCUIT</span> BLOOM</div>
+      <p style="margin-top:0.6rem; color:#3f372e; font-size:0.9rem;">A journal of place, patience, and the prairie. Est. 2026.</p>
+    </div>
+    <div class="footer-links"><strong>Explore</strong><a href="#">Blog</a><a href="#">Categories</a><a href="#">Authors</a><a href="#">Archive</a></div>
+    <div class="footer-links"><strong>Information</strong><a href="#">About</a><a href="#">Contact</a><a href="#">Editorial policy</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    <div class="footer-links"><strong>Resources</strong><a href="#">FAQ</a><a href="#">Sitemap</a><a href="#">Disclaimer</a><a href="#">Cookie policy</a></div>
+  </footer>
+
+  <div style="display:flex; justify-content:space-between; padding:1.5rem 0.5rem; font-size:0.7rem; color:#6b6257; border-top:1px solid #ddd0c2; margin-top:0.5rem;">
+    <span>© 2026 Prairie Biscuit Bloom — all rights reserved</span>
+    <span>handcrafted · slow web</span>
+  </div>
+
+</div> <!-- end site-wrap -->
+</body>
+</html>

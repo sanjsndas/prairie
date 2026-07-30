@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms · Prairie Biscuit Bloom</title>
+  <!-- Fonts: Martel (serif) + Inter (sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== reset & base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f0;
+      color: #2a241c;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+
+    .site-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #fcf9f4;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.02);
+    }
+
+    /* ===== brand palette ===== */
+    :root {
+      --bloom-green: #5f7a5a;
+      --bloom-gold: #b9925c;
+      --bloom-cream: #f3eee6;
+      --bloom-ink: #1f1b16;
+      --bloom-sand: #e3d9cd;
+      --bloom-prairie: #dacbb8;
+      --bloom-white: #fefcf8;
+    }
+
+    /* ===== typography ===== */
+    h1, h2, h3, h4, .logo, .nav-primary a, .card-title, .footer-head {
+      font-family: 'Martel', serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--bloom-ink);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .logo span {
+      background: var(--bloom-gold);
+      color: white;
+      font-size: 1rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== navigation ===== */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0 0.8rem;
+      border-bottom: 2px solid var(--bloom-sand);
+      flex-wrap: wrap;
+    }
+
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      list-style: none;
+    }
+
+    .nav-primary a {
+      text-decoration: none;
+      color: var(--bloom-ink);
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+
+    .nav-primary a:hover {
+      border-bottom-color: var(--bloom-gold);
+      color: #000;
+    }
+
+    /* ===== cards & layout ===== */
+    .floating-card {
+      background: var(--bloom-white);
+      border-radius: 2.5rem 1rem 2.5rem 1rem;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .floating-card:hover {
+      box-shadow: 0 25px 45px -12px rgba(60, 50, 30, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .card-feature {
+      background: var(--bloom-white);
+      padding: 2rem 2.5rem;
+      border-radius: 4rem 1.2rem 4rem 1.2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #ece5db;
+      transition: 0.2s;
+    }
+
+    .card-feature:hover {
+      background: #fefcf8;
+      border-color: var(--bloom-gold);
+    }
+
+    .meta-tag {
+      background: var(--bloom-prairie);
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #2d2a22;
+      text-transform: uppercase;
+    }
+
+    .pill-btn {
+      background: var(--bloom-ink);
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      border: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      font-size: 0.85rem;
+      transition: 0.15s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .pill-btn:hover {
+      background: #3f372d;
+      transform: scale(0.97);
+    }
+
+    /* ===== terms specific ===== */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem 2.5rem;
+      margin: 3rem 0 4rem;
+    }
+
+    .terms-section {
+      background: #fcf9f4;
+    }
+
+    .terms-section h2 {
+      font-size: 2rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid var(--bloom-sand);
+      padding-bottom: 0.3rem;
+    }
+
+    .terms-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .terms-section p {
+      margin-bottom: 1rem;
+    }
+
+    .terms-section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .terms-section li {
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box {
+      background: var(--bloom-cream);
+      border-radius: 2rem 0.5rem 2rem 0.5rem;
+      padding: 1.8rem 2rem;
+      border-left: 8px solid var(--bloom-gold);
+      margin: 1.8rem 0;
+    }
+
+    .terms-sidebar {
+      background: #f7f2e9;
+      border-radius: 1rem 4rem 1rem 4rem;
+      padding: 2.2rem;
+      border: 1px solid #dccfc0;
+    }
+
+    .terms-sidebar h3 {
+      font-family: 'Martel', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .terms-sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .terms-sidebar li {
+      padding: 0.6rem 0;
+      border-bottom: 1px dotted #d4c8b8;
+    }
+
+    .terms-sidebar li:last-child {
+      border-bottom: 0;
+    }
+
+    .terms-sidebar a {
+      color: var(--bloom-ink);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .terms-sidebar a:hover {
+      color: var(--bloom-gold);
+    }
+
+    /* ===== footer ===== */
+    .footer-distinct {
+      margin-top: 5rem;
+      background: #f2ece2;
+      padding: 3rem 2rem 2.5rem;
+      border-radius: 5rem 1rem 1rem 1rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1fr;
+      gap: 2rem;
+      border: 1px solid #dccfc0;
+    }
+
+    .footer-distinct .brand span {
+      background: var(--bloom-gold);
+      color: white;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #2d251e;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px dotted transparent;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: var(--bloom-gold);
+    }
+
+    /* ===== responsive ===== */
+    @media (max-width: 800px) {
+      .terms-grid { grid-template-columns: 1fr; }
+      .footer-distinct { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .nav-primary { gap: 0.8rem; flex-wrap: wrap; }
+      .footer-distinct { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+
+  <!-- ===== navigation ===== -->
+  <nav class="nav-bar">
+    <div class="logo">🌾 PRAIRIE <span>BISCUIT</span> BLOOM</div>
+    <ul class="nav-primary">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html" style="border-bottom-color: var(--bloom-gold);">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+      <li><a href="categories.html">CATEGORIES</a></li>
+      <li><a href="disclamier.html">DISCLAMIER</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== terms hero ===== -->
+  <div style="margin: 2.5rem 0 1.5rem;">
+    <h1 style="font-size: 3.8rem;">Terms of Service</h1>
+    <div style="border-left: 6px solid var(--bloom-gold); padding-left: 1.5rem; max-width: 700px; font-size: 1.1rem; color: #3f372e;">
+      Ground rules for our prairie community. Last updated: July 2026.
+    </div>
+  </div>
+
+  <!-- ===== terms content : main + sidebar ===== -->
+  <div class="terms-grid">
+    <!-- left: full terms -->
+    <div class="terms-section floating-card" style="border-radius: 3rem 0.5rem 3rem 0.5rem;">
+      <span class="meta-tag">Agreement</span>
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using the Prairie Biscuit Bloom website, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you must not use our site.</p>
+      
+      <h2>2. Content & Intellectual Property</h2>
+      <p>All original writing, photography, illustrations, and audio published on Prairie Biscuit Bloom are the intellectual property of their respective creators and the journal itself. You may not reproduce, distribute, or commercially exploit any content without explicit written permission.</p>
+      <ul>
+        <li><strong>Personal use:</strong> You may print or share single articles for non-commercial, personal use, provided you credit the source.</li>
+        <li><strong>Attribution:</strong> Any reproduction must include the author’s name and a link to the original article.</li>
+      </ul>
+
+      <h2>3. User Contributions</h2>
+      <p>We welcome thoughtful comments and engagement. By submitting a comment, letter, or other material, you grant us a non-exclusive, royalty-free license to publish, archive, and share it within the journal. We reserve the right to edit for clarity and length, and to remove any content that is abusive, off-topic, or spam.</p>
+
+      <div class="highlight-box">
+        <strong>🌾 Community commitment:</strong> We ask all participants to treat one another with the same patience and curiosity we extend to the prairie. Harassment, hate speech, or trolling will result in immediate banning.
+      </div>
+
+      <h2>4. Privacy & Data</h2>
+      <p>Your privacy is important to us. Please review our <a href="#" style="color: var(--bloom-gold);">Privacy Policy</a> and <a href="#" style="color: var(--bloom-gold);">Cookies Policy</a> to understand how we collect and handle your information. We do not sell or trade your personal data.</p>
+
+      <h2>5. Disclaimers & Limitation of Liability</h2>
+      <p>The content on Prairie Biscuit Bloom is provided for informational and educational purposes only. We do not guarantee the accuracy, completeness, or timeliness of any information. Use of the site is at your own risk. In no event shall Prairie Biscuit Bloom or its contributors be liable for any damages arising from your use of the site.</p>
+
+      <h2>6. External Links</h2>
+      <p>Our site may link to third-party websites. We are not responsible for the content or practices of those sites, and we encourage you to review their own terms and policies.</p>
+
+      <h2>7. Changes to These Terms</h2>
+      <p>We may update these Terms of Service from time to time. The latest version will always be posted here, with the effective date noted. Continued use of the site after changes constitutes acceptance of the new terms.</p>
+
+      <h2>8. Governing Law</h2>
+      <p>These terms are governed by the laws of the state of the Great Plains, without regard to conflict of law principles. Any disputes shall be resolved in the courts located within that jurisdiction.</p>
+
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #5f5547;">If you have questions about these terms, please <a href="contact.html" style="color: var(--bloom-gold);">contact us</a>.</p>
+    </div>
+
+    <!-- right: quick reference sidebar -->
+    <div class="terms-sidebar">
+      <h3>Quick reference</h3>
+      <ul>
+        <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+        <li><a href="#content">2. Content & IP</a></li>
+        <li><a href="#contributions">3. User Contributions</a></li>
+        <li><a href="#privacy">4. Privacy & Data</a></li>
+        <li><a href="#disclaimers">5. Disclaimers</a></li>
+        <li><a href="#externallinks">6. External Links</a></li>
+        <li><a href="#changes">7. Changes to Terms</a></li>
+        <li><a href="#governing">8. Governing Law</a></li>
+      </ul>
+      <div style="margin-top: 2.5rem; background: #e3d9cd; border-radius: 2rem 0.5rem 2rem 0.5rem; padding: 1.2rem 1.5rem;">
+        <p style="font-weight: 500; margin-bottom: 0.2rem;">📬 Have a question?</p>
+        <p style="font-size: 0.9rem;">Our editors are happy to clarify any part of these terms. Reach out via our <a href="contact.html" style="color: var(--bloom-ink); font-weight: 600;">contact page</a>.</p>
+      </div>
+      <div style="margin-top: 1.5rem; padding: 0.8rem 1rem; background: #f9f5ed; border-radius: 2rem; text-align: center; border: 1px solid #dacfc0;">
+        <span style="font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;">⬤ effective: july 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== footer ===== -->
+  <footer class="footer-distinct">
+    <div class="brand">
+      <div style="font-size:1.8rem; font-family:'Martel',serif;">🌾 PRAIRIE <span style="background:var(--bloom-gold); color:white; padding:0.1rem 0.6rem; border-radius:30px;">BISCUIT</span> BLOOM</div>
+      <p style="margin-top:0.6rem; color:#3f372e; font-size:0.9rem;">A journal of place, patience, and the prairie. Est. 2026.</p>
+    </div>
+    <div class="footer-links"><strong>Explore</strong><a href="#">Blog</a><a href="#">Categories</a><a href="#">Authors</a><a href="#">Archive</a></div>
+    <div class="footer-links"><strong>Information</strong><a href="#">About</a><a href="#">Contact</a><a href="#">Editorial policy</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    <div class="footer-links"><strong>Resources</strong><a href="#">FAQ</a><a href="#">Sitemap</a><a href="#">Disclaimer</a><a href="#">Cookie policy</a></div>
+  </footer>
+
+  <!-- bottom legal -->
+  <div style="display:flex; justify-content:space-between; padding:1.5rem 0.5rem; font-size:0.7rem; color:#6b6257; border-top:1px solid #ddd0c2; margin-top:0.5rem;">
+    <span>© 2026 Prairie Biscuit Bloom — all rights reserved</span>
+    <span>handcrafted · slow web</span>
+  </div>
+
+</div> <!-- end site-wrap -->
+</body>
+</html>

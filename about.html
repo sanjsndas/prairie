@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Prairie Biscuit Bloom</title>
+  <!-- Fonts: Martel (serif) + Inter (sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== reset & base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f0;
+      color: #2a241c;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+
+    .site-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #fcf9f4;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.02);
+    }
+
+    /* ===== brand palette ===== */
+    :root {
+      --bloom-green: #5f7a5a;
+      --bloom-gold: #b9925c;
+      --bloom-cream: #f3eee6;
+      --bloom-ink: #1f1b16;
+      --bloom-sand: #e3d9cd;
+      --bloom-prairie: #dacbb8;
+      --bloom-white: #fefcf8;
+    }
+
+    /* ===== typography ===== */
+    h1, h2, h3, h4, .logo, .nav-primary a, .card-title, .footer-head {
+      font-family: 'Martel', serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--bloom-ink);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .logo span {
+      background: var(--bloom-gold);
+      color: white;
+      font-size: 1rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== navigation ===== */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0 0.8rem;
+      border-bottom: 2px solid var(--bloom-sand);
+      flex-wrap: wrap;
+    }
+
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      list-style: none;
+    }
+
+    .nav-primary a {
+      text-decoration: none;
+      color: var(--bloom-ink);
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+
+    .nav-primary a:hover {
+      border-bottom-color: var(--bloom-gold);
+      color: #000;
+    }
+
+    /* ===== cards & layout ===== */
+    .floating-card {
+      background: var(--bloom-white);
+      border-radius: 2.5rem 1rem 2.5rem 1rem;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .floating-card:hover {
+      box-shadow: 0 25px 45px -12px rgba(60, 50, 30, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .card-feature {
+      background: var(--bloom-white);
+      padding: 2rem 2.5rem;
+      border-radius: 4rem 1.2rem 4rem 1.2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #ece5db;
+      transition: 0.2s;
+    }
+
+    .card-feature:hover {
+      background: #fefcf8;
+      border-color: var(--bloom-gold);
+    }
+
+    .meta-tag {
+      background: var(--bloom-prairie);
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #2d2a22;
+      text-transform: uppercase;
+    }
+
+    .inline-tag {
+      background: var(--bloom-sand);
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .pill-btn {
+      background: var(--bloom-ink);
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      border: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      font-size: 0.85rem;
+      transition: 0.15s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .pill-btn:hover {
+      background: #3f372d;
+      transform: scale(0.97);
+    }
+
+    /* ===== about-specific grid ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem 2.5rem;
+      margin: 3rem 0 4rem;
+    }
+
+    .about-story {
+      font-size: 1.05rem;
+      color: #2f281f;
+    }
+
+    .about-story p {
+      margin-bottom: 1.2rem;
+    }
+
+    .mission-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .mission-item {
+      background: #f9f5ed;
+      padding: 0.8rem 1.5rem;
+      border-radius: 3rem 0.5rem 3rem 0.5rem;
+      border-left: 6px solid var(--bloom-gold);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .team-card {
+      background: white;
+      padding: 1.8rem 1.5rem;
+      border-radius: 2rem 0.5rem 2rem 0.5rem;
+      border: 1px solid #ece2d6;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .team-card:nth-child(2) {
+      border-radius: 0.5rem 3rem 0.5rem 3rem;
+      background: #f9f5ed;
+    }
+
+    .team-card .avatar {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .team-card h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .team-card .role {
+      font-size: 0.8rem;
+      color: #5f5547;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== footer ===== */
+    .footer-distinct {
+      margin-top: 5rem;
+      background: #f2ece2;
+      padding: 3rem 2rem 2.5rem;
+      border-radius: 5rem 1rem 1rem 1rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1fr;
+      gap: 2rem;
+      border: 1px solid #dccfc0;
+    }
+
+    .footer-distinct .brand span {
+      background: var(--bloom-gold);
+      color: white;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #2d251e;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px dotted transparent;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: var(--bloom-gold);
+    }
+
+    /* ===== responsive ===== */
+    @media (max-width: 800px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .footer-distinct { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .nav-primary { gap: 0.8rem; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+
+  <!-- ===== navigation ===== -->
+  <nav class="nav-bar">
+    <div class="logo">🌾 PRAIRIE <span>BISCUIT</span> BLOOM</div>
+    <ul class="nav-primary">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" style="border-bottom-color: var(--bloom-gold);">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+      <li><a href="categories.html">CATEGORIES</a></li>
+      <li><a href="disclamier.html">DISCLAMIER</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== about hero ===== -->
+  <div class="story-arch" style="margin: 2.5rem 0 1.5rem;">
+    <h1 style="font-size: 3.8rem;">About this journal</h1>
+    <div class="subhead" style="border-left-color: var(--bloom-gold); max-width: 700px;">
+      Founded in the spirit of patient observation, Prairie Biscuit Bloom is a slow journal for the curious mind.
+    </div>
+  </div>
+
+  <!-- ===== about content : split story + mission ===== -->
+  <div class="about-grid">
+    <!-- left: narrative -->
+    <div class="floating-card" style="border-radius: 3rem 0.5rem 3rem 0.5rem;">
+      <span class="meta-tag">Our story</span>
+      <h2 style="font-family: 'Martel', serif; font-size: 2rem; margin: 0.5rem 0 0.8rem;">The prairie as teacher</h2>
+      <div class="about-story">
+        <p>In the winter of 2026, a small group of writers, botanists, and bakers gathered around a wood stove in a lean‑to on the northern plains. We wanted to create a space where the land could speak — not in the language of data, but in the tongue of seasons, soil, and silence.</p>
+        <p><strong>Prairie Biscuit Bloom</strong> is that space. We publish essays, field notes, recipes, and reflections that honour the slow rhythms of the natural world. Our name recalls both the humble biscuit (a staple of prairie homesteads) and the brief, brilliant bloom of the pasque flower — the first sign of spring on the shortgrass.</p>
+        <p>We believe that attention is a form of devotion. That a single square metre of prairie can hold more wisdom than a library. And that the best stories are the ones we discover when we sit still long enough to listen.</p>
+      </div>
+      <a href="#" class="pill-btn" style="margin-top: 0.5rem;">Read our manifesto →</a>
+    </div>
+
+    <!-- right: mission & values -->
+    <div class="card-feature" style="border-radius: 1rem 4rem 1rem 4rem; background: #f7f2e9;">
+      <span class="inline-tag">✦ core values</span>
+      <h3 style="font-size: 1.8rem; font-weight: 700; margin: 0.3rem 0;">What we stand for</h3>
+      <div class="mission-list">
+        <div class="mission-item"><strong>🌿 Deep attention</strong> — We prioritise long‑form, unhurried writing over clickbait.</div>
+        <div class="mission-item"><strong>📖 Field wisdom</strong> — Our contributors include ecologists, historians, and local knowledge keepers.</div>
+        <div class="mission-item"><strong>🍞 Handcrafted</strong> — Every piece is edited with care, like a loaf of sourdough.</div>
+        <div class="mission-item"><strong>🌾 Land ethic</strong> — We advocate for observation without disturbance, and for the protection of prairie ecosystems.</div>
+      </div>
+      <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #3d352b;">We are a reader‑supported journal. No ads, no algorithms — just the prairie.</p>
+    </div>
+  </div>
+
+  <!-- ===== team section (with personality) ===== -->
+  <div style="margin: 3rem 0 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+      <h2 style="font-family: 'Martel', serif; font-size: 2.2rem;">The collective</h2>
+      <span style="background: var(--bloom-prairie); padding: 0.2rem 1.2rem; border-radius: 40px; font-size: 0.8rem; font-weight: 600;">contributors & editors</span>
+    </div>
+    <div class="team-grid">
+      <div class="team-card"><div class="avatar">🌾</div><h4>Elias Thorne</h4><div class="role">Founder · Editor</div><p style="font-size:0.85rem; color:#3f372e; margin-top:0.4rem;">Botanist and biscuit baker. Elias has walked the Coteau for 20 years.</p></div>
+      <div class="team-card"><div class="avatar">📗</div><h4>Mira Bell</h4><div class="role">Associate Editor</div><p style="font-size:0.85rem; color:#3f372e; margin-top:0.4rem;">Historian of the Great Plains, with a passion for forgotten seed varieties.</p></div>
+      <div class="team-card"><div class="avatar">✒️</div><h4>Samuel Grey</h4><div class="role">Contributing Writer</div><p style="font-size:0.85rem; color:#3f372e; margin-top:0.4rem;">Poet and essayist. Samuel’s work explores the intersection of memory and landscape.</p></div>
+      <div class="team-card"><div class="avatar">🌻</div><h4>Lena Hart</h4><div class="role">Field Correspondent</div><p style="font-size:0.85rem; color:#3f372e; margin-top:0.4rem;">Photographer and naturalist. Lena documents prairie phenology week by week.</p></div>
+      <div class="team-card"><div class="avatar">🍞</div><h4>Arthur Dunn</h4><div class="role">Recipe Editor</div><p style="font-size:0.85rem; color:#3f372e; margin-top:0.4rem;">Baker and food historian. Arthur revives heritage grains and old‑fashioned methods.</p></div>
+      <div class="team-card"><div class="avatar">🎧</div><h4>Rosa Chen</h4><div class="role">Audio Producer</div><p style="font-size:0.85rem; color:#3f372e; margin-top:0.4rem;">Sound artist capturing the acoustic ecology of the shortgrass prairie.</p></div>
+    </div>
+  </div>
+
+  <!-- ===== a bit more texture: timeline or quote ===== -->
+  <div style="background: var(--bloom-cream); padding: 2.5rem; border-radius: 3rem 0.5rem 3rem 0.5rem; margin: 2rem 0; border: 1px solid #dacfc0; text-align: center;">
+    <blockquote style="font-family: 'Martel', serif; font-size: 1.8rem; font-weight: 400; color: #2d251e; max-width: 700px; margin: 0 auto; line-height: 1.4;">
+      “The prairie is not empty. It is full of stories waiting for someone to sit down and listen.”
+    </blockquote>
+    <p style="margin-top: 0.5rem; font-style: italic; color: #5f5547;">— from the inaugural issue, spring 2026</p>
+  </div>
+
+  <!-- ===== footer ===== -->
+  <footer class="footer-distinct">
+    <div class="brand">
+      <div style="font-size:1.8rem; font-family:'Martel',serif;">🌾 PRAIRIE <span style="background:var(--bloom-gold); color:white; padding:0.1rem 0.6rem; border-radius:30px;">BISCUIT</span> BLOOM</div>
+      <p style="margin-top:0.6rem; color:#3f372e; font-size:0.9rem;">A journal of place, patience, and the prairie. Est. 2026.</p>
+    </div>
+    <div class="footer-links"><strong>Explore</strong><a href="#">Blog</a><a href="#">Categories</a><a href="#">Authors</a><a href="#">Archive</a></div>
+    <div class="footer-links"><strong>Information</strong><a href="#">About</a><a href="#">Contact</a><a href="#">Editorial policy</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    <div class="footer-links"><strong>Resources</strong><a href="#">FAQ</a><a href="#">Sitemap</a><a href="#">Disclaimer</a><a href="#">Cookie policy</a></div>
+  </footer>
+
+  <!-- bottom legal -->
+  <div style="display:flex; justify-content:space-between; padding:1.5rem 0.5rem; font-size:0.7rem; color:#6b6257; border-top:1px solid #ddd0c2; margin-top:0.5rem;">
+    <span>© 2026 Prairie Biscuit Bloom — all rights reserved</span>
+    <span>handcrafted · slow web</span>
+  </div>
+
+</div> <!-- end site-wrap -->
+</body>
+</html>
